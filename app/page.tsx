@@ -122,7 +122,9 @@ export default function Home() {
                         <p className="text-gray-400">{show.location}</p>
                       </div>
                     </div>
-                    <Button className="bg-[#15c0eb] hover:bg-[#1563eb] text-white">Get Tickets</Button>
+                    <Link href="https://www.eventbrite.com/e/reign-of-z-the-almas-beautiful-disatour-morsbergers-tavern-tickets-1276361635009?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer">
+                      <Button className="bg-[#15c0eb] hover:bg-[#1563eb] text-white">Get Tickets</Button>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -361,7 +363,7 @@ export default function Home() {
           </section>
 
           {/* Newsletter */}
-          <section className="py-16 bg-[#15c0eb]/20">
+          <section className="py-16 bg-[#15c0eb]">
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Join Our Mailing List</h2>
               <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
@@ -426,34 +428,16 @@ export default function Home() {
 // Sample data
 const shows = [
   {
-    date: "APR 15",
-    day: "Saturday",
-    venue: "The Echo Lounge",
-    location: "Los Angeles, CA",
-  },
-  {
-    date: "APR 22",
-    day: "Saturday",
-    venue: "Sonic Ballroom",
-    location: "New York, NY",
-  },
-  {
-    date: "MAY 05",
+    date: "June 6",
     day: "Friday",
-    venue: "Rhythm House",
-    location: "Chicago, IL",
-  },
-  {
-    date: "MAY 12",
-    day: "Friday",
-    venue: "Melody Hall",
-    location: "Austin, TX",
+    venue: "Morsebergers",
+    location: "Catonsville, MD",
   },
 ]
 
 const albums = [
   {
-    title: "Fragments of Light",
+    title: "Dark Minds",
     year: "2023",
     cover: "/placeholder.svg?height=500&width=500",
     links: {
@@ -465,7 +449,7 @@ const albums = [
     },
   },
   {
-    title: "Prism Effect",
+    title: "PlaceHolder",
     year: "2021",
     cover: "/placeholder.svg?height=500&width=500",
     links: {
@@ -477,7 +461,7 @@ const albums = [
     },
   },
   {
-    title: "Spectrum",
+    title: "PlaceHolder",
     year: "2019",
     cover: "/placeholder.svg?height=500&width=500",
     links: {
@@ -493,7 +477,7 @@ const albums = [
 const bandMembers = [
   {
     name: "Luke Morrill",
-    instrument: "Guitar / CEO",
+    instrument: "Guitar",
     photo: "/placeholder.svg?height=300&width=300",
     bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
@@ -507,24 +491,24 @@ const bandMembers = [
     name: "Adam",
     instrument: "???",
     photo: "/placeholder.svg?height=300&width=300",
-    bio: "Employee #2",
+    bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
   },
   {
     name: "Anthony",
     instrument: "Guitar",
     photo: "/placeholder.svg?height=300&width=300",
-    bio: "Employee #2's boss",
+    bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
   },
   {
     name: "Steve",
     instrument: "Bass",
     photo: "/placeholder.svg?height=300&width=300",
-    bio: "Employee #2's dad",
+    bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
   },
   {
     name: "Taylor",
     instrument: "Drum",
     photo: "/placeholder.svg?height=300&width=300",
-    bio: "Barumbabumba...",
+    bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
   }
 ]
