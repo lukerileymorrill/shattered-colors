@@ -279,10 +279,10 @@ export default function Home() {
           </section>
 
           {/* Band Members */}
-          <section id="band" className="py-20 bg-[#15c0eb]">
+          <section id="band" className="py-20 bg-gradient-to-b from-[#15c0eb] to-black">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-                Meet the <span className="text-[#15c0eb]">Band</span>
+                Meet the Band
               </h2>
               <div className="space-y-16">
                 {bandMembers.map((member, index) => (
@@ -304,8 +304,8 @@ export default function Home() {
                     </div>
                     <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'} text-center`}>
                       <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                      <p className="text-[#15c0eb] text-lg mb-4">{member.instrument}</p>
-                      <p className="text-black">{member.bio}</p>
+                      <p className="text-lg mb-4">{member.instrument}</p>
+                      <p className="text-white">{member.bio}</p>
                     </div>
                   </div>
                 ))}
@@ -363,7 +363,7 @@ export default function Home() {
           </section>
 
           {/* Newsletter */}
-          <section className="py-16 bg-[#15c0eb]">
+          <section className="py-16 bg-gradient-to-b from-black to-[#15c0eb]">
             <div className="container mx-auto px-4 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">Join Our Mailing List</h2>
               <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
@@ -479,30 +479,26 @@ const bandMembers = [
     name: "Adam",
     instrument: "Vocals",
     photo: "/placeholder.svg?height=300&width=300",
-    bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+    bio: "Adam Snyder has been a passionate vocalist for over a decade, with music deeply woven into every part of his life—from singing and DJing to running live sound. His keen ear and technical skills have made him not only a standout performer but also a sought-after sound technician. With a strong background in audio tech, theater and four years of experience as an electrician, Adam brings both creativity and precision to everything he does. Adam formed the band in late 2022, but then reformed the group in early 2025. He is in charge of social media, branding, and band/tour management." 
   },
   {
     name: "Luke",
     instrument: "Guitar",
     photo: "/placeholder.svg?height=300&width=300",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
+    bio: "Luke Morrill is a versatile guitarist with over 10 years of experience, blending styles from jazz, rock, and blues to create a sound all his own. His deep musicality spans a wide range of genres, making him a dynamic and expressive performer. Off the stage, Luke brings his sharp mind to the world of tech—he’s spent the last 5 years immersed in computer science, handling everything from web design to coding with outstanding skill. Whether he's playing a solo or building a site, Luke delivers with creativity and precision. Luke has been performing live for over 4 years with multiple groups, but landed home here in 2023! Luke handles all websites, coding, as well as lights and performance FX! "},
   {
     name: "Anthony",
     instrument: "Guitar",
     photo: "/placeholder.svg?height=300&width=300",
-    bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-  },
+    bio: "Anthony Yanez is the newest guitarist to join the group, bringing over 12 years of guitar experience and a wealth of talent to the team. Originally from Fresno, CA, Anthony moved with his wife to Catonsville, MD, for work and has since embarked on a new musical journey with the band in Baltimore. A seasoned player with a background in various groups back home, Anthony is known for his exceptional skill across all aspects of guitar and band dynamics. His diverse experience and passion for music make him a standout addition to the group. Anthony is in charge of all booking and logistics for the group. He also assists with band/tour management."},
   {
-    name: "Steve",
+    name: "Stephen",
     instrument: "Bass",
     photo: "/placeholder.svg?height=300&width=300",
-    bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-  },
+    bio: "Stephen Snyder began his music journey in the early 90s, playing drums and guitar in high school bands. After taking a break to build a family, he made a triumphant return to music, this time as a bass player, making a significant comeback. With a rich musical background and a diverse skill set, Stephen’s talent spans multiple instruments and genres. By day, he works full-time to provide for his family, but by night, he’s back on stage, showcasing his passion and dedication to music.Stephen is in charge of all business aspects of the band and project. All copyrighting, marketing, and logistics."},
   {
     name: "Taylor",
     instrument: "Drums",
     photo: "/placeholder.svg?height=300&width=300",
-    bio: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
-  }
+    bio: "Taylor Giles is a masterful drummer with over 12 years of experience, having started her musical journey as a child, inspired by her father’s dream of drumming. Her talent behind the kit is matched only by her passion for animals. Taylor is a dedicated animal lover, with a special focus on rescuing and sheltering a wide range of creatures, from lizards and spiders to dogs. Whether she’s laying down a groove or caring for her furry and scaly friends, Taylor brings a big heart and fierce dedication to everything she does. Taylor joined the group in late 2024 to fill our sound on the drums. She is in charge of all art, merchandise, and designs for the band! "}
 ]
