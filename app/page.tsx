@@ -222,19 +222,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Sneak Peek Instagram Embed */}
-        <section className="py-12 bg-black">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Sneak Peek</h2>
-            <div className="flex justify-center">
-              <div style={{maxWidth:540, width:'100%'}}>
-                <blockquote className="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DKU8XNQuR0M/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style={{ background:'#FFF', border:0, borderRadius:3, boxShadow:'0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)', margin:'1px', minWidth:326, padding:0, width:'99.375%' }}></blockquote>
-              </div>
-            </div>
-            <script async src="//www.instagram.com/embed.js"></script>
-          </div>
-        </section>
-
         {/* Band Members */}
         <section id="band" className="py-20 bg-gradient-to-b from-[#15c0eb] to-black">
           <div className="container mx-auto px-4">
