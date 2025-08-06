@@ -15,16 +15,23 @@ import taylor from "@/public/images/pics/taylor.jpg"
 // Sample data
 const shows = [
   {
-    date: "June 21, 2025",
+    date: "August 9, 2025",
     day: "Saturday",
-    venue: "Shattered Colors Live at Angel's Rock Bar",
-    location: "PowerPlant Live",
-    link: "https://www.eventbrite.com/e/skor-with-dameon-crimson-orchid-after-auroras-shattered-colors-tickets-1365595194989?aff=oddtdtcreator"
+    venue: "Shattered Colors Live @ Morsbergers",
+    location: "Morsbergers",
+    link: "https://www.eventbrite.com/e/the-wicks-with-ryder-just-for-kicks-shattered-colors-tickets-1469558963419?aff=oddtdtcreator"
+  },
+    {
+    date: "September 5, 2025",
+    day: "Friday",
+    venue: "Shattered Colors Live @ Zen West",
+    location: "Zen West",
+    link: "https://www.eventbrite.com/e/shattered-colors-with-scoria-sly-grin-a-great-day-to-learn-tickets-1536773453769?aff=oddtdtcreator"
   },
   {
     date: "October 26, 2025",
     day: "Sunday",
-    venue: "Shattered Colors Live at Skull House Music and Tattoo Festival",
+    venue: "Shattered Colors Live @ Skull House Music and Tattoo Festival",
     location: "Dundalk, MD",
     link: "https://www.eventbrite.com/e/skull-house-rock-tickets-1264177973349?aff=oddtdtcreator"
   }
@@ -76,11 +83,18 @@ const bandMembers = [
 
 const pastEvents = [
   {
+    date: "June 21, 2025",
+    day: "Saturday",
+    venue: "Shattered Colors Live at Angel's Rock Bar",
+    location: "PowerPlant Live",
+  },
+  {
     date: "June 6, 2025",
     day: "Friday",
-    venue: "Shattered Colors Live at Morsebergers @ 7",
+    venue: "Shattered Colors Live at Morsebergers",
     location: "Baltimore, MD",
   },
+
 ]
 
 export default function Home() {
