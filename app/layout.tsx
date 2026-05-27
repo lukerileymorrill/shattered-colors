@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Metal_Mania } from "next/font/google"
+import { Inter, Metal_Mania, Oswald } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -9,6 +9,12 @@ const metalMania = Metal_Mania({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-metal-mania",
+  display: "swap",
+})
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-oswald",
   display: "swap",
 })
 
@@ -25,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} ${metalMania.variable} bg-black text-white`}>
+      <body className={`${inter.className} ${metalMania.variable} ${oswald.variable} bg-background text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>

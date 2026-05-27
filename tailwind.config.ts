@@ -21,6 +21,7 @@ const config = {
     extend: {
       fontFamily: {
         metal: ["var(--font-metal-mania)"],
+        display: ["var(--font-oswald)", "Oswald", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -56,6 +57,9 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "neon-pink": "#ff0096",
+        "neon-cyan": "#00ffff",
+        "neon-purple": "#b026ff",
         purple: {
           400: "#a78bfa",
           600: "#7c3aed",
