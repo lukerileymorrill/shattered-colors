@@ -1,15 +1,27 @@
-import { MapPin, Calendar, Ticket } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { MapPin, Calendar, Ticket, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { TicketTailorWidget } from "@/components/tickettailor-widget"
 
-type ShowStatus = "on-sale" | "low-tickets" | "sold-out"
+const FESTIVAL_URL = "https://www.tickettailor.com/events/shatteredrockfest/2345793"
 
-const shows: { date: string; city: string; venue: string; status: ShowStatus }[] = [
-  { date: "MAY 15, 2026", city: "Los Angeles, CA", venue: "The Wiltern", status: "on-sale" },
-  { date: "MAY 18, 2026", city: "San Francisco, CA", venue: "The Fillmore", status: "low-tickets" },
-  { date: "MAY 22, 2026", city: "Seattle, WA", venue: "Showbox SoDo", status: "on-sale" },
-  { date: "MAY 25, 2026", city: "Denver, CO", venue: "Ogden Theatre", status: "on-sale" },
-  { date: "MAY 28, 2026", city: "Chicago, IL", venue: "House of Blues", status: "sold-out" },
-  { date: "JUN 1, 2026", city: "New York, NY", venue: "Terminal 5", status: "on-sale" },
+const details: { icon: typeof Calendar; label: string; lines: string[] }[] = [
+  {
+    icon: Calendar,
+    label: "Date",
+    lines: ["Saturday", "September 12, 2026"],
+  },
+  {
+    icon: Clock,
+    label: "Time",
+    lines: ["Music 3pm – 10pm", "Bar closes 2am"],
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    lines: ["State Fare Bar & Restaurant", "748 Frederick Rd", "Catonsville, MD 21228"],
+  },
 ]
 
 export function ShowsSection() {
@@ -26,78 +38,75 @@ export function ShowsSection() {
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-neon-cyan uppercase tracking-[0.3em] text-sm mb-4">On the Road</p>
+          <p className="text-neon-cyan uppercase tracking-[0.3em] text-sm mb-4">Rock For Life</p>
           <h2 className="font-display text-4xl md:text-6xl font-bold uppercase tracking-tight mb-4">
-            Upcoming <span className="text-neon-pink">Shows</span>
+            Shattered <span className="text-neon-pink">Rock Festival</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Catch us live on the Neon Oblivion World Tour 2026
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Come rock out for a cause in Catonsville, MD and support us in bringing awareness to mental health and
+            suicide prevention. All day music, food, and drinks.
           </p>
         </div>
 
-        <div className="space-y-4">
-          {shows.map((show, index) => (
+        {/* Detail strip — full width so it anchors the top of the section */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-10">
+          {details.map((detail) => (
             <div
-              key={index}
-              className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-4 sm:p-6 hover:border-neon-pink/50 transition-all duration-300 hover:bg-card/80"
+              key={detail.label}
+              className="flex items-start gap-4 bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-5 hover:border-neon-cyan/40 transition-colors duration-300"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-                <div className="flex items-center gap-3 sm:w-40">
-                  <Calendar className="h-4 w-4 text-neon-cyan shrink-0" />
-                  <span className="font-display text-sm font-semibold uppercase tracking-wider">
-                    {show.date}
-                  </span>
-                </div>
-
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <MapPin className="h-4 w-4 text-neon-pink shrink-0" />
-                    <span className="font-display text-lg font-bold uppercase tracking-wide">
-                      {show.city}
-                    </span>
-                  </div>
-                  <span className="text-muted-foreground text-sm pl-6">{show.venue}</span>
-                </div>
-
-                <div className="flex items-center gap-4 sm:ml-auto">
-                  {show.status === "sold-out" ? (
-                    <span className="text-muted-foreground text-sm uppercase tracking-wider font-medium">
-                      Sold Out
-                    </span>
-                  ) : (
-                    <>
-                      {show.status === "low-tickets" && (
-                        <span className="text-neon-pink text-xs uppercase tracking-wider font-medium animate-pulse">
-                          Low Tickets
-                        </span>
-                      )}
-                      <Button
-                        size="sm"
-                        className="bg-neon-pink hover:bg-neon-pink/80 text-foreground uppercase tracking-wider shadow-[0_0_15px_rgba(255,0,150,0.3)] hover:shadow-[0_0_25px_rgba(255,0,150,0.5)]"
-                      >
-                        <Ticket className="h-4 w-4 mr-2" />
-                        Tickets
-                      </Button>
-                    </>
-                  )}
-                </div>
+              <detail.icon className="h-5 w-5 text-neon-cyan shrink-0 mt-0.5" />
+              <div>
+                <span className="block font-display text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-1.5">
+                  {detail.label}
+                </span>
+                {detail.lines.map((line) => (
+                  <p key={line} className="text-sm text-foreground leading-relaxed">
+                    {line}
+                  </p>
+                ))}
               </div>
-
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-neon-pink/0 via-neon-pink/5 to-neon-cyan/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-neon-cyan text-neon-cyan bg-transparent hover:bg-neon-cyan/10 hover:text-neon-cyan uppercase tracking-wider"
-          >
-            View All Shows
-          </Button>
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10 items-start">
+          {/* Poster — frame matches the artwork's native 9:16 so nothing crops */}
+          <div className="flex flex-col gap-6">
+            <Link href={FESTIVAL_URL} target="_blank" rel="noopener noreferrer" className="group block">
+              <div className="relative w-full aspect-[9/16] rounded-lg overflow-hidden border border-border/50 group-hover:border-neon-pink/50 transition-all duration-300 shadow-[0_0_25px_rgba(255,0,150,0.15)] group-hover:shadow-[0_0_35px_rgba(255,0,150,0.35)]">
+                <Image
+                  src="/images/shattered-rock-festival.jpg"
+                  alt="Shattered Rock Festival — September 12, 2026, Catonsville, MD"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </Link>
+
+            <Button
+              asChild
+              size="lg"
+              className="w-full bg-neon-pink hover:bg-neon-pink/80 text-foreground uppercase tracking-wider shadow-[0_0_15px_rgba(255,0,150,0.3)] hover:shadow-[0_0_25px_rgba(255,0,150,0.5)]"
+            >
+              <Link href={FESTIVAL_URL} target="_blank" rel="noopener noreferrer">
+                <Ticket className="h-4 w-4 mr-2" />
+                Get Festival Tickets
+              </Link>
+            </Button>
+          </div>
+
+          {/* Booking widget — light card, since the embed paints its own light background */}
+          <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-lg p-4 sm:p-6">
+            <p className="font-display text-lg font-bold uppercase tracking-wide mb-4">Grab Your Tickets</p>
+            <div className="bg-white rounded-md overflow-hidden">
+              <TicketTailorWidget eventUrl={FESTIVAL_URL} className="min-h-[30rem]" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

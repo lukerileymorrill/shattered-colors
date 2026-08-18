@@ -49,9 +49,9 @@ export function Hero() {
             size="lg"
             className="bg-neon-pink hover:bg-neon-pink/80 text-foreground font-semibold uppercase tracking-wider px-8 py-6 text-base shadow-[0_0_30px_rgba(255,0,150,0.4)] hover:shadow-[0_0_40px_rgba(255,0,150,0.6)] transition-all"
           >
-            <Link href="#music" scroll>
+            <Link href="#shows" scroll>
               <Play className="mr-2 h-5 w-5" />
-              Listen Now
+              Festival Tickets
             </Link>
           </Button>
           <Button
@@ -60,9 +60,9 @@ export function Hero() {
             variant="outline"
             className="border-neon-cyan text-neon-cyan bg-transparent hover:bg-neon-cyan/10 hover:text-neon-cyan font-semibold uppercase tracking-wider px-8 py-6 text-base shadow-[0_0_20px_rgba(0,255,255,0.2)] hover:shadow-[0_0_30px_rgba(0,255,255,0.4)] transition-all"
           >
-            <Link href="#music" scroll>
+            <Link href="#about" scroll>
               <Disc3 className="mr-2 h-5 w-5" />
-              New Album Out
+              About the Band
             </Link>
           </Button>
         </div>
