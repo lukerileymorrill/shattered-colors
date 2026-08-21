@@ -51,16 +51,58 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  @apply bg-background text-foreground;
+/* Keep anchored sections clear of the fixed navbar */
+section[id] {
+  scroll-margin-top: 4rem;
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
+  /*
+   * One continuous ambient wash for the whole page. Sections layer their own
+   * accents on top of this instead of each painting an opaque background —
+   * that's what used to leave a hard line at every section boundary.
+   */
   body {
     @apply bg-background text-foreground;
+    /* Sized against the document (not the viewport), so the page drifts
+       pink -> cyan -> purple -> pink as you scroll rather than sitting flat. */
+    background-image:
+      radial-gradient(70rem 50rem at 10% 4%, hsl(326 100% 60% / 0.08), transparent 60%),
+      radial-gradient(65rem 45rem at 90% 24%, hsl(186 100% 50% / 0.07), transparent 60%),
+      radial-gradient(75rem 55rem at 12% 52%, hsl(267 75% 58% / 0.09), transparent 60%),
+      radial-gradient(60rem 45rem at 90% 76%, hsl(326 100% 60% / 0.07), transparent 60%),
+      linear-gradient(
+        to bottom,
+        hsl(267 75% 58% / 0.05),
+        transparent 30%,
+        hsl(186 100% 50% / 0.03) 60%,
+        hsl(326 100% 60% / 0.06)
+      );
+  }
+}
+
+@layer utilities {
+  /*
+   * Feather a decorative layer out at the section edges so it blends into the
+   * page wash rather than stopping dead at the section boundary.
+   */
+  .fade-edges-y {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 16%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 16%, #000 84%, transparent 100%);
+  }
+
+  .fade-edge-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 98%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 98%);
+  }
+
+  .fade-edge-t {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 28%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 28%);
   }
 }
 
@@ -177,6 +219,80 @@ body {
 .animate-glitch {
   animation: glitch 1s linear infinite;
   position: relative;
+}
+
+/*
+ * Hero wordmark: broken glass
+ * ---------------------------
+ * An SVG crack web is painted *inside* the glyphs via background-clip: text,
+ * layered over the fill. The cracks are one background layer and the fill is
+ * another, which is why background-position below carries two values — it
+ * holds the cracks still while the colour fill slides underneath.
+ */
+:root {
+  --glass-cracks: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 160' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%230a1018' stroke-linecap='round'%3E%3Cpath d='M0 58 L92 50 L178 74 L262 42 L358 68 L468 38 L600 56' stroke-width='3'/%3E%3Cpath d='M0 112 L108 96 L202 122 L300 90 L412 118 L520 86 L600 106' stroke-width='3'/%3E%3Cpath d='M62 0 L86 58 L70 112 L98 160' stroke-width='2.6'/%3E%3Cpath d='M178 0 L166 74 L202 122 L186 160' stroke-width='2.6'/%3E%3Cpath d='M300 0 L324 42 L300 90 L320 160' stroke-width='2.6'/%3E%3Cpath d='M432 0 L414 50 L442 118 L426 160' stroke-width='2.6'/%3E%3Cpath d='M520 0 L538 46 L520 86 L542 160' stroke-width='2.6'/%3E%3Cpath d='M92 50 L120 0 M262 42 L250 0 M468 38 L486 0' stroke-width='1.6'/%3E%3Cpath d='M108 96 L60 160 M202 122 L240 160 M412 118 L380 160 M520 86 L560 60' stroke-width='1.6'/%3E%3Cpath d='M86 58 L178 74 M324 42 L414 50 M166 74 L300 90 M442 118 L520 86' stroke-width='1.4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.glass {
+  display: block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-repeat: no-repeat;
+}
+
+/* "Shattered" — cracked ice */
+.glass--ice {
+  background-image: var(--glass-cracks),
+    linear-gradient(155deg, #ffffff, #cfeaff 28%, #ffffff 48%, #a8d8f5 72%, #eaf6ff);
+  background-size: 100% 100%, 100% 100%;
+}
+
+/* "Colors" — no cracks, just a wide gradient sliding across the fill */
+.color-drift {
+  display: block;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    90deg,
+    #ff0096,
+    #b026ff,
+    #00ffff,
+    #7c3aed,
+    #b026ff,
+    #ff0096
+  );
+  background-size: 300% 100%;
+  animation: colorDrift 9s ease-in-out infinite;
+}
+
+@keyframes colorDrift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Fragments thrown off the wordmark */
+.shard {
+  position: absolute;
+  background: linear-gradient(140deg, #ffffff, #9fd6f5);
+  clip-path: polygon(50% 0%, 100% 70%, 10% 100%);
+  opacity: 0.7;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.45));
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .color-drift {
+    animation: none;
+    background-position: 25% 50%;
+  }
 }
 
 /* Metal font styling */

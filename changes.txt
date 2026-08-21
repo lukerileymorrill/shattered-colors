@@ -1,0 +1,19 @@
+
+
+- festival sections
+  - gradiant background of the festival poster
+  - make rock fesitival words same blue as 'about the band' 
+  - text adam bullet point for 
+      - songs images for dark minds and war within
+  - remove 'rock since 2019'
+   rmeobve ticket embed thingy
+   - remove subscribe to email list thing
+   - change contacts
+   - change social media links, no twitter
+    - order: instagram, spotify, apple music, youtube, facebook, tiktok
+    - different page for bios
+    - need pictures of people for bio, 
+    - temove provacy and terms
+
+    - figure out spacing for mobile
+    
